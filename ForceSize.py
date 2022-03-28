@@ -100,23 +100,23 @@ def main():
             qtd_rotas = len(permutation4) - 1
 
             distancia_media = distance4 / qtd_rotas
-            tempo_medio = (distancia_media / 1000) / 50
-            tempo_medio_40 = (distancia_media / 1000) / 40
-            tempo_medio_60 = (distancia_media / 1000) / 60
+            tempo_medio = 60*((distancia_media / 1000) / 50)
+            tempo_medio_40 = 60*((distancia_media / 1000) / 40)
+            tempo_medio_60 = 60*((distancia_media / 1000) / 60)
 
             st.write(f'Distância média entre PDVs (KM): {distancia_media/1000}')
-            st.write(f'Tempo Médio entre PDVs (min - v = 50km/h): {tempo_medio*60}')
-            st.write(f'Tempo Médio entre PDVs (min - v = 40km/h): {tempo_medio_40*60}')
-            st.write(f'Tempo Médio entre PDVs (min - v = 60km/h): {tempo_medio_60*60'})
+            st.write(f'Tempo Médio entre PDVs (min - v = 50km/h): {tempo_medio}')
+            st.write(f'Tempo Médio entre PDVs (min - v = 40km/h): {tempo_medio_40}')
+            st.write(f'Tempo Médio entre PDVs (min - v = 60km/h): {tempo_medio_60'})
 
             Tempo_medio_rota = []
             Tempo_medio_rota_40 = []
             Tempo_medio_rota_60 = []
 
             for i in range(len(permutation4)):
-                Tempo_medio_rota.append(tempo_medio * 60)
-                Tempo_medio_rota_40.append(tempo_medio_40 * 60)
-                Tempo_medio_rota_60.append(tempo_medio_60 * 60)
+                Tempo_medio_rota.append(tempo_medio )
+                Tempo_medio_rota_40.append(tempo_medio_40 )
+                Tempo_medio_rota_60.append(tempo_medio_60 )
 
             freq_ = list(base_lat_long[colunas[2]])
             tempv_ = list(base_lat_long[colunas[3]])
