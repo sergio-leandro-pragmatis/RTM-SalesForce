@@ -47,7 +47,7 @@ def main():
         
         st.write('Para o input utilize insira uma planilha no padrão abaixo (na mesma ordem no arquivo excel):')
         
-        PDV_lat = [19.53796400
+        PDV_lat = [19.53796400,
                     19.51838100,
                     19.49321000,
                     19.52762000,
