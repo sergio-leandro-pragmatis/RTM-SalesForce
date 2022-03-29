@@ -58,8 +58,7 @@ def main():
         example = pd.DataFrame(dict_)
         st.table(example)
         
-        
-        def to_excel(df):
+       def to_excel(df):
             output = BytesIO()
             writer = pd.ExcelWriter(output, engine='xlsxwriter')
             df.to_excel(writer, index=False, sheet_name='Sheet1')
@@ -70,14 +69,17 @@ def main():
             writer.save()
             processed_data = output.getvalue()
             return processed_data
-            df_xlsx = to_excel(base_lat_long, pd.DataFrame(dict))
-            
-            df_xlsx = to_excel(example)
+        df_xlsx = to_excel(base_lat_long, pd.DataFrame(dict))
 
-            st.download_button(label='📥 Clique aqui para baixar o template ',
-                               data=df_xlsx,
-                               file_name='Template_ForcaDeVendas.xlsx')
+        df_xlsx = to_excel(example)
+
+        st.download_button(label='📥 Clique aqui para baixar o template ',
+                           data=df_xlsx,
+                           file_name='Template_ForcaDeVendas.xlsx')
+
         
+        
+ 
         
         
         
