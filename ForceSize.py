@@ -69,7 +69,7 @@ def main():
             writer.save()
             processed_data = output.getvalue()
             return processed_data
-        df_xlsx = to_excel(base_lat_long, pd.DataFrame(dict))
+       
 
         df_xlsx = to_excel(example)
 
