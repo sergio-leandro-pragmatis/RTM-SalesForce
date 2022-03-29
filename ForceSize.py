@@ -22,7 +22,7 @@ def main():
     st.image(foto, caption='Squad Analytics', use_column_width=False)
 
 
-    menu = ['Simulador de Força de Vendas', 'Sobre']
+    menu = ['Simulador de Força de Vendas', 'Suporte']
     choice = st.sidebar.selectbox("Menu", menu)
 
     if choice == menu[0]:
