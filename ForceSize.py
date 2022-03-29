@@ -41,9 +41,9 @@ def main():
 
         st.subheader('Input')
 
-        CHS = st.number_input('Carga Horária Semanal', value = 480)
+        CHS = st.number_input('Carga Horária Semanal', value = 40)
 
-        FA = st.number_input('Fator de Ajuste', value = 1)
+        FA = st.number_input('Fator de Ajuste', value = 1.4)
 
         busca = st.file_uploader('Insira a planilha para a busca por aqui')
 
