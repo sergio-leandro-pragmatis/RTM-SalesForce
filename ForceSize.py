@@ -47,24 +47,13 @@ def main():
         
         st.write('Para o input utilize insira uma planilha no padrão abaixo (na mesma ordem no arquivo excel):')
         
-        PDV_lat = [19.53796400,
-                    19.51838100,
-                    19.49321000,
-                    19.52762000,
-                    19.56123300]
+        PDV_lat = [19.537964, 19.518381, 19.49321,19.52762, 19.561233]
 
-        PDV_long = [-99.189358,
-                    -99.156774,
-                    -99.184939,
-                    -99.14794,
-                    -99.247383]
+        PDV_long = [-99.189358,  -99.156774, -99.184939,  -99.14794,  -99.247383]
 
-        Freq = [0,1,3,2,1,3]
-        Tempo_medio = [9.526991577,
-                        4.512250739,
-                        5.47204333,
-                        11.67188591,
-                        11.99083285]
+        Freq = [0,1,3,2,1]
+        Tempo_medio = [9.526991577,4.512250739, 5.47204333,  11.67188591, 11.99083285]
+        
         dict_ = {"PDV_lat": PDV_lat, "PDV_long": PDV_long, "Freq": Freq, "Tempo_medio_visita": Tempo_medio}
         example = pd.DataFrame(dict_)
         st.table(example)
