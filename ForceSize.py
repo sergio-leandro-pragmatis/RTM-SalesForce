@@ -107,7 +107,7 @@ def main():
             st.write(f'Distância média entre PDVs (KM): {distancia_media/1000}')
             st.write(f'Tempo Médio entre PDVs (min - v = 50km/h): {tempo_medio}')
             st.write(f'Tempo Médio entre PDVs (min - v = 40km/h): {tempo_medio_40}')
-            st.write(f'Tempo Médio entre PDVs (min - v = 60km/h): {tempo_medio_60'})
+            st.write(f'Tempo Médio entre PDVs (min - v = 60km/h): {tempo_medio_60}')
 
             Tempo_medio_rota = []
             Tempo_medio_rota_40 = []
