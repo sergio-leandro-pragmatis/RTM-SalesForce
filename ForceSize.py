@@ -44,7 +44,57 @@ def main():
         CHS = st.number_input('Carga Horária Semanal', value = 40)
 
         FA = st.number_input('Fator de Ajuste', value = 1.4)
+        
+        st.write('Para o input utilize insira uma planilha no padrão abaixo (na mesma ordem no arquivo excel):')
+        
+        PDV_lat = [19,53796400
+                    19,51838100,
+                    19,49321000,
+                    19,52762000,
+                    19,56123300]
 
+        PDV_long = [-99,189358,
+                    -99,156774,
+                    -99,184939,
+                    -99,14794,
+                    -99,247383]
+
+        Freq = [0,1,3,2,1,3]
+        Tempo_medio = [9,526991577,
+                        4,512250739,
+                        5,247204333,
+                        11,67188591,
+                        11,99083285]
+        dict_ = {"PDV_lat": PDV_lat, "PDV_long": PDV_long, "Freq": Freq, "Tempo_medio_visita": Tempo_medio}
+        example = pd.DataFrame(dict_)
+        st.table(example)
+        
+        
+        def to_excel(df):
+            output = BytesIO()
+            writer = pd.ExcelWriter(output, engine='xlsxwriter')
+            df.to_excel(writer, index=False, sheet_name='Sheet1')
+            workbook = writer.book
+            worksheet = writer.sheets['Sheet1']
+            format1 = workbook.add_format({'num_format': '0.00'})
+            worksheet.set_column('A:A', None, format1)
+            writer.save()
+            processed_data = output.getvalue()
+            return processed_data
+            df_xlsx = to_excel(base_lat_long, pd.DataFrame(dict))
+            
+            df_xlsx = to_excel(example)
+
+            st.download_button(label='📥 Clique aqui para baixar o template ',
+                               data=df_xlsx,
+                               file_name='Template_ForcaDeVendas.xlsx')
+        
+        
+        
+        
+        
+        
+        
         busca = st.file_uploader('Insira a planilha para a busca por aqui')
 
         if busca:
