@@ -58,7 +58,7 @@ def main():
         example = pd.DataFrame(dict_)
         st.table(example)
         
-       def to_excel(df):
+        def to_excel(df):
             output = BytesIO()
             writer = pd.ExcelWriter(output, engine='xlsxwriter')
             df.to_excel(writer, index=False, sheet_name='Sheet1')
